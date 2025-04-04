@@ -1,0 +1,208 @@
+/* Réinitialisation basique */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mise en page générale */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #def0ef; 
+    color: #333; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-height: 800px;
+    flex-direction: column;
+}
+
+/* Section des services */
+.services {
+    width: 100%;
+    max-width: 1200px;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.6em;
+    color: #3498db;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-card {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+    height: 200px; 
+}
+
+
+.service-card img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Conteneur pour le titre et le bouton */
+.service-card .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute; 
+    top: 10px;
+    right: 10px; 
+    text-align: right; 
+    width: 100%;
+    height: 100%;
+}
+
+/* Titre h3 */
+.service-card p {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    margin: 10px;
+    padding-left: 5px;
+    padding: 5px;
+    margin-top: 30px;
+    color: #34495e;
+    font-weight: 600;
+    text-align: right;
+}
+
+
+button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    width: 150px;
+    margin-bottom: 60px;
+    margin-left: 220px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    outline: none;
+    text-decoration: none;
+}
+
+/* Effet de survol du bouton */
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-4px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+}
+
+/* Effet au clic */
+button:active {
+    background-color: #2471a3;
+    transform: translateY(2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    filter: brightness(0.9);
+}
+
+/* Liens bouton */
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-card {
+    background-color: #ffffff; 
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner de la profondeur */
+    width: 90%;
+    max-width: 550px;
+    text-align: center;
+    position: relative; /* Positionnement pour la bordure */
+    overflow: hidden; /* Pour éviter que la bordure dépasse */
+    border: 6px solid transparent; /* Bordure initiale transparente et plus épaisse */
+    border-radius: 15px; /* Bordure arrondie pour un effet plus doux */
+    animation: borderColorAnimation 4s linear infinite; /* Animation de la bordure */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .services h2 {
+        font-size: 2.3em;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 12px 25px; 
+    }
+}
+
+/* Animation pour les cartes de service */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+/* Application de l'animation à toutes les cartes de service */
+.service-card {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+    height: 200px; 
+    opacity: 0; 
+    animation: slideIn 0.6s ease-out forwards;
+}
+
+/*délai spécifique pour chaque carte */
+.service-card:nth-child(1) {
+    animation-delay: 0.2s; /* Carte de la Santé */
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.4s; 
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.6s; 
+}
+
+/* L'effet survol*/
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,195 @@
+/* Réinitialisation basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mise en page générale */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f4f7; /* Fond très clair pour adoucir la page */
+    color: #333; /* Texte sombre pour une bonne lisibilité */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Style général pour la carte principale */
+.main-card {
+    background-color: #ffffff; /* Fond blanc pour la carte principale */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner de la profondeur */
+    width: 90%;
+    max-width: 550px;
+    height: 800px;
+    text-align: center;
+    position: relative; /* Positionnement pour la bordure */
+    overflow: hidden; /* Pour éviter que la bordure dépasse */
+    border: 6px solid transparent; /* Bordure initiale transparente et plus épaisse */
+    border-radius: 15px; /* Bordure arrondie pour un effet plus doux */
+    animation: borderColorAnimation 4s linear infinite; /* Animation de la bordure */
+}
+
+/* Animation pour changer les couleurs de la bordure */
+@keyframes borderColorAnimation {
+    0% {
+        border-color: #A2C9FF; /* Bleu clair pastel */
+    }
+    25% {
+        border-color: #7FB5D9; /* Bleu ciel doux */
+    }
+    50% {
+        border-color: rgb(235, 162, 174);
+    }
+    75% {
+        border-color: #4682B4; /* Bleu acier */
+    }
+   
+   
+   
+}
+
+/* En-tête sans arrière-plan mais avec des éléments lisibles */
+header {
+    padding: 30px 0;
+    margin-bottom: 20px;
+}
+
+/* Texte du titre avec effet lisible */
+header h1 {
+    font-size: 3.5em; /* Grande taille pour le titre */
+    margin-bottom: 0.5em;
+    color: #3498db;  /* Bleu moderne et clair */
+    font-weight: 700; /* Gras pour plus de visibilité */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre douce pour ajouter de la profondeur */
+    transition: transform 0.3s ease; /* Effet de zoom au survol */
+}
+
+header h1:hover {
+    transform: scale(1.05); /* Zoom effect au survol pour dynamiser */
+}
+
+header p {
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #7f8c8d; /* Gris clair */
+    margin-top: 15px;
+    font-style: italic;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+header p:hover {
+    color: #3498db; /* Changer la couleur du texte au survol */
+}
+
+/* Section d'introduction */
+.intro {
+    padding: 40px 0;
+}
+
+/* Cartes de service */
+.service-card {
+    background-color: #ffffff; /* Fond blanc pour les cartes de service */
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    border-radius: 12px;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.service-card p {
+    font-size: 1.1em;
+    color: #555; /* Gris foncé pour les descriptions */
+    margin-bottom: 25px;
+}
+button {
+    padding: 14px 28px;
+    font-size: 1.2em;
+    background-color: #3498db; /* Bleu clair */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px; /* Bord arrondi pour un effet doux */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombres multiples et plus marquées */
+    transition: all 0.4s ease-in-out; /* Transition fluide pour tous les effets */
+    outline: none;
+    text-decoration: none; /* Enlever le soulignement sur le texte du bouton */
+}
+
+/* Effet sur le survol (hover) */
+button:hover {
+    background-color: #2980b9; /* Changement vers un bleu foncé */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 8px 15px rgba(0, 0, 0, 0.3); /* Ombres plus marquées pour l'effet de survol */
+    transform: translateY(-6px); /* Légère élévation pour simuler un effet de flottement */
+    filter: brightness(1.1); /* Légère augmentation de la luminosité pour un effet plus vibrant */
+}
+
+/* Effet au clic (active) */
+button:active {
+    background-color: #2471a3; /* Changement de couleur au clic */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2); /* Ombres plus petites pour simuler un enfoncement */
+    transform: translateY(4px); /* Effet d'enfoncement au clic */
+    filter: brightness(0.9); /* Diminution de la luminosité pour simuler l'effet de pression */
+}
+
+/* Effet de focus */
+button:focus {
+    outline: none; /* Supprimer la bordure de focus par défaut */
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.7); /* Halo lumineux autour du bouton */
+}
+
+/* Si tu as un lien à l'intérieur du bouton */
+button a {
+    color: white;
+    text-decoration: none; /* Empêcher le soulignement du lien dans le bouton */
+}
+
+
+
+/* Effet sur les cartes de service au survol */
+.service-card:hover {
+    transform: translateY(-10px); /* Déplacer légèrement vers le haut au survol */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 1em;
+    }
+
+    .main-card {
+        width: 95%; /* Largeur plus grande pour les petits écrans */
+        padding: 30px; /* Moins de padding pour mieux s'adapter */
+    }
+}
